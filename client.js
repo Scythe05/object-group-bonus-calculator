@@ -30,7 +30,6 @@ const employees = [
     reviewRating: 1
   }
 ];
-
 // YOU SHOULD NOT NEED TO CHANGE ANYTHING ABOVE THIS POINT
 
 // This problem is massive! Break the problem down, take small steps, and test as you go.
@@ -38,5 +37,32 @@ const employees = [
 
 // This is not a race. Everyone on your team should understand what is happening.
 // Ask questions when you don't.
+
+// Create loop over employees array and log result
+for (let employee of employees) {
+  console.log('Should get all employees', employee);
+};
+
+// Create function with one object parameter
+function getBonus(employee){
+  // return new object with listed properties
+  let singleEmployee = {
+    name: employee.name,
+  };
+
+  ratingToBonus(employee);
+  return singleEmployee;
+};// End getBonus
+
+// Create math function to determine rating to bonus percentage
+function ratingToBonus(employeeObject){
+  if(employeeObject.reviewRating <= 2){
+    alert('No bonus for you!')
+  }
+};// end ratingToBonus
+console.log('trial run', getBonus(employees[3]));
+
+
+// getBonus(employees[0])
 
 console.log( employees );
