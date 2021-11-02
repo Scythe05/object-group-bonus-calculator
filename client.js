@@ -1,4 +1,8 @@
+$(document).ready(button);
 
+function button(){
+  $('#run').on('click', employeeBonusArray(employees));
+};// end button
 
 const employees = [
   {
@@ -48,16 +52,18 @@ for (let employee of employees) {
 };
 
 // Create function with one object parameter
-function getBonus(employee){
-  // return new object with listed properties
-  parseInt(employees.employeeNumber);
-  parseInt(employees.annualSalary);
-  let singleEmployee = ratingToBonus(employee);
-  return singleEmployee;
-};// End getBonus
+// function getBonus(employee){
+//   // return new object with listed properties
+  
+//   let singleEmployee = ratingToBonus(employee);
+  
+//   return singleEmployee;
+// };// End getBonus
 
 // Create math function to determine rating to bonus percentage
 function ratingToBonus(employeeObject){
+  parseInt(employees.employeeNumber);
+  parseInt(employees.annualSalary);
   let bonusPercentage = 0;
   let bonusCalculation = 0;
   let singleEmployee = {name: employeeObject.name};
@@ -118,14 +124,28 @@ function ratingToBonus(employeeObject){
   singleEmployee.totalBonus = bonusCalculation;
   // calculate totalCompensation
   singleEmployee.totalCompensation = Number(employeeObject.annualSalary) + bonusCalculation;
-  
+
   return singleEmployee;
 };// end ratingToBonus
-console.log('trial run', getBonus(employees[0]));
-console.log('trial run', getBonus(employees[3]));
-console.log('trial run', getBonus(employees[1]));
-console.log('trial run', getBonus(employees[2]));
-console.log('trial run', getBonus(employees[4]));
+
+
+let employeeArrayReturn = [];
+//function to push employees into array
+function employeeBonusArray(employeeArray){
+  let result = $('#singleEmp');
+  result.empty();
+  for(let employee of employeeArray){
+    employeeArrayReturn.push(ratingToBonus(employee));
+    result.append( `<li> ${employee.name} ${employee.totalBonus} ${employee.annualSalary} ${employee.totalCompensation}</li>`);
+  };
+  return employeeArrayReturn;
+}
+console.log(employeeBonusArray(employees));
+console.log('trial run', ratingToBonus(employees[0]));
+console.log('trial run', ratingToBonus(employees[3]));
+console.log('trial run', ratingToBonus(employees[1]));
+console.log('trial run', ratingToBonus(employees[2]));
+console.log('trial run', ratingToBonus(employees[4]));
 
 
 
