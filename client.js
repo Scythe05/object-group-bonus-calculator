@@ -1,3 +1,5 @@
+
+
 const employees = [
   {
     name: 'Atticus',
@@ -124,6 +126,8 @@ console.log('trial run', getBonus(employees[3]));
 console.log('trial run', getBonus(employees[1]));
 console.log('trial run', getBonus(employees[2]));
 console.log('trial run', getBonus(employees[4]));
+
+
 
 
 
